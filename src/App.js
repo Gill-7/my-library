@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Sidebar from "./components/sidebar/Sidebar";
+import ReadingNowPage from "./pages/readingNow/ReadingNow";
+import FutureReadingPage from "./pages/futureReading/FutureReading";
+import PageReadingPage from "./pages/pastReading/PastReading";
+import CollectionPage from "./pages/collection/Collection";
+import AddBook from "./pages/addBook/AddBook";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="main">
+        <div className="sidebar">
+          <Sidebar />
+        </div>
+        <div className="container">
+          <Routes>
+            <Route path="/reading" element={<ReadingNowPage />} />
+            <Route path="/future-reading" element={<FutureReadingPage />} />
+            <Route path="/past-reading" element={<PageReadingPage />} />
+            <Route path="/collection" element={<CollectionPage />} />
+            <Route path="add-book" element={<AddBook />} />
+            <Route path="*" element={<Navigate to="/reading" replace />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

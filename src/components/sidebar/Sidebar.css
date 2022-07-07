@@ -1,0 +1,25 @@
+.link {
+  display: block;
+  color: var(--bg);
+  flex-wrap: wrap;
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: 1.06rem;
+  letter-spacing: 0.7px;
+  transition: all 0.2s ease-in-out;
+  padding: 10px 0 10px 3rem;
+}
+
+.link-btn {
+  text-decoration: underline;
+}
+
+.active {
+  background-color: var(--border);
+  color: #000;
+}
+
+.link:hover {
+  background-color: #86d300;
+  color: #000;
+}
