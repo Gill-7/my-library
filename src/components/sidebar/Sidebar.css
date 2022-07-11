@@ -11,7 +11,12 @@
 }
 
 .link-btn {
-  text-decoration: underline;
+  display: flex;
+}
+
+.link-btn-icon {
+  margin-left: 4px;
+  font-size: 18px;
 }
 
 .active {
