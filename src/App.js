@@ -6,7 +6,7 @@ import ReadingNowPage from "./pages/readingNow/ReadingNow";
 import FutureReadingPage from "./pages/futureReading/FutureReading";
 import PageReadingPage from "./pages/pastReading/PastReading";
 import CollectionPage from "./pages/collection/Collection";
-import AddBook from "./pages/addBook/AddBook";
+import SearchBook from "./pages/SearchBook/SearchBook";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
             <Route path="/future-reading" element={<FutureReadingPage />} />
             <Route path="/past-reading" element={<PageReadingPage />} />
             <Route path="/collection" element={<CollectionPage />} />
-            <Route path="add-book" element={<AddBook />} />
+            <Route path="/search" element={<SearchBook />} />
             <Route path="*" element={<Navigate to="/reading" replace />} />
           </Routes>
         </div>

@@ -20,8 +20,15 @@ function Sidebar() {
         <NavLink to="/collection" activeClassName="active" className="link">
           Collection
         </NavLink>
-        <NavLink to="/add-book" className="link link-btn">
-          Add New Book
+        <NavLink
+          to="/search"
+          className="link link-btn"
+          // activeClassName="active"
+        >
+          <div className="link-btn-text">Search</div>
+          <div className="link-btn-icon">
+            <ion-icon name="search-outline"></ion-icon>
+          </div>
         </NavLink>
       </div>
     </nav>
