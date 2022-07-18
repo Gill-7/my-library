@@ -1,0 +1,34 @@
+.search_container {
+  text-align: center;
+  margin-top: 1.5rem;
+  position: relative;
+  height: 37px;
+}
+
+.input,
+.input_btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.input {
+  width: 450px;
+  padding: 3px 0;
+  font-size: 1.1rem;
+  color: rgb(88, 87, 87);
+  border-bottom: 2px solid rgb(123, 120, 120);
+}
+
+.input_btn {
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  margin-left: 6px;
+  font-size: 1.6rem;
+  color: rgb(88, 87, 87);
+}
+
+.input-btn:hover {
+  color: #000;
+}

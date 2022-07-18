@@ -10,11 +10,11 @@
   padding: 10px 0 10px 3rem;
 }
 
-.link-btn {
+.link_btn {
   display: flex;
 }
 
-.link-btn-icon {
+.link_btn_icon {
   margin-left: 4px;
   font-size: 18px;
 }
