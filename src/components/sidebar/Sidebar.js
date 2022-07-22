@@ -1,5 +1,5 @@
 import React from "react";
-import "./Sidebar.css";
+import classes from "./Sidebar.module.css";
 import Header from "../header/Header";
 import { NavLink } from "react-router-dom";
 
@@ -8,25 +8,37 @@ function Sidebar() {
     <nav>
       <Header />
       <div>
-        <NavLink to="/reading" activeClassName="active" className="link">
+        <NavLink
+          to="/reading"
+          activeclassname="active"
+          className={classes.link}
+        >
           Reading Now
         </NavLink>
-        <NavLink to="/future-reading" activeClassName="active" className="link">
+        <NavLink
+          to="/future-reading"
+          activeclassname="active"
+          className={classes.link}
+        >
           Wants to Read
         </NavLink>
-        <NavLink to="/past-reading" activeClassName="active" className="link">
+        <NavLink
+          to="/past-reading"
+          activeclassname="active"
+          className={classes.link}
+        >
           Read
         </NavLink>
-        <NavLink to="/collection" activeClassName="active" className="link">
+        <NavLink
+          to="/collection"
+          activeclassname="active"
+          className={classes.link}
+        >
           Collection
         </NavLink>
-        <NavLink
-          to="/search"
-          className="link link-btn"
-          // activeClassName="active"
-        >
-          <div className="link-btn-text">Search</div>
-          <div className="link-btn-icon">
+        <NavLink to="/search" className={`${classes.link} ${classes.link_btn}`}>
+          <div className={classes.link_btn_text}>Search</div>
+          <div className={classes.link_btn_icon}>
             <ion-icon name="search-outline"></ion-icon>
           </div>
         </NavLink>

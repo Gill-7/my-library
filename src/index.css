@@ -1,14 +1,19 @@
 :root {
-  --parent-bg: #86d300;
+  --parent-bg: #f1f3f8;
   --color: #1c422b;
-  --bg: #f3fec9;
-  --border: #dbc1e1;
+  --light-color: #244f35;
+  --bg: #f1f3f8;
+  --border: #c8cde5;
+  --black: #000;
+  --light-border: #d4dafa;
+  --white: #fff;
+  --heading: rgb(58, 58, 58);
+  --text: ;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--parent-bg);
   color: var(--color);
   box-sizing: border-box;
 }
