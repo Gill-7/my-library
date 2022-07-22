@@ -1,14 +1,15 @@
 .container {
-  width: 800px;
+  min-width: 700px;
+  width: 700px;
   margin: 0 auto;
   margin-top: 2rem;
 }
 
 .single_container {
   display: grid;
-  grid-template-columns: 0.25fr 1fr;
+  grid-template-columns: 0.24fr 1fr;
   min-width: 700px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1.2px solid rgb(175, 173, 173);
 }
@@ -21,8 +22,8 @@
 }
 
 .left img {
-  width: 135px;
-  height: 190px;
+  width: 115px;
+  height: 165px;
   cursor: pointer;
 }
 
@@ -30,50 +31,93 @@
   text-align: left;
 }
 
-.right button,
 .right h2,
 .right h5,
 .right p {
   padding: 0;
   margin: 0;
+  font-family: arial;
 }
+
 .right h2 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   cursor: pointer;
   font-weight: 600;
   display: inline-block;
-  color: var(--black);
+  color: var(--heading);
+  letter-spacing: 0.4px;
 }
+
 .right h2:hover {
   text-decoration: underline;
 }
 
 .right h5 {
-  color: var(--black);
+  color: var(--heading);
   font-weight: 500;
-  margin: 0.4rem 0 0.3rem 0;
-  font-size: 1rem;
+  margin: 0.2rem 0 0 0;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.right h5 span {
+  font-weight: 500;
+  letter-spacing: 0.4px;
 }
 
 .right p {
-  margin: 0.4rem 0;
+  margin: 0.5rem 0;
   font-size: 0.95rem;
   color: var(--black);
+  letter-spacing: 0.2px;
 }
 
-.right button {
-  margin-top: 1rem;
-  padding: 6px 16px;
-  margin-bottom: 5px;
-  border: 1px solid #adb5bd;
-  border-radius: 10px;
+.right .description {
+  margin-bottom: 1rem;
+  line-height: 20px;
 }
-.right button:hover {
-  background-color: #6cb5fe;
+
+.specialBtn,
+.readingBtn1,
+.readingBtn2 {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: arial;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+}
+
+.specialBtn {
+  min-width: 130px;
+  height: 40px;
+  color: var(--bg);
+  padding: 5px 10px;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: var(--color);
+  z-index: 1;
+}
+
+.readingBtn1,
+.readingBtn2 {
+  background-color: transparent;
+  margin-left: 1rem;
+  font-size: 0.9rem;
+}
+
+.readingBtn1:hover,
+.readingBtn2:hover {
+  text-decoration: underline;
+}
+
+.specialBtn:hover {
+  color: var(--white);
+  background: var(--light-color);
 }
 /*
-
-
 .pagination {
   display: flex;
   align-items: center;

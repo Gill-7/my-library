@@ -1,3 +1,11 @@
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .link {
   display: block;
   color: var(--bg);

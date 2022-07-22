@@ -24,6 +24,8 @@ function SearchBook(props) {
   };
 
   const submitHandler = (e) => {
+    if (searchTerm === "") {
+    }
     e.preventDefault();
     getData(searchTerm);
   };
