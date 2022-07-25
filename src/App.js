@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./App.module.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/sidebar/Sidebar";
@@ -10,10 +10,17 @@ import SearchBook from "./pages/SearchBook/SearchBook";
 
 function App() {
   const [data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [total, setTotal] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const handleData = (arr) => {
     setData(arr);
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [data]);
 
   return (
     <BrowserRouter>
@@ -29,7 +36,18 @@ function App() {
             <Route path="/collection" element={<CollectionPage />} />
             <Route
               path="/search"
-              element={<SearchBook handleData={handleData} data={data} />}
+              element={
+                <SearchBook
+                  handleData={handleData}
+                  data={data}
+                  searchTerm={searchTerm}
+                  setSearchTerm={setSearchTerm}
+                  total={total}
+                  setTotal={setTotal}
+                  currentPage={currentPage}
+                  setCurrentPage={setCurrentPage}
+                />
+              }
             />
             <Route path="*" element={<Navigate to="/reading" replace />} />
           </Routes>
