@@ -5,7 +5,7 @@ import classes from "./ShowSearchBooks.module.css";
 
 export default function ShowSearchBooks(props) {
   const { data } = props;
-  console.log(data);
+
   return (
     <div className={classes.container}>
       {data.map((book, id) => (

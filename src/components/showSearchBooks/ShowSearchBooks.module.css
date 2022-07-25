@@ -117,34 +117,3 @@
   color: var(--white);
   background: var(--light-color);
 }
-/*
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style-type: none;
-}
-
-.page_item {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.page_link {
-  border: 1px solid grey;
-  margin: 0;
-  padding: 0.5rem 0.8rem;
-  list-style-type: none;
-  cursor: pointer;
-}
-.page_links {
-  margin: 0;
-  padding: 0.5rem 0.8rem;
-  list-style-type: none;
-  cursor: pointer;
-}
-
-.active {
-  background-color: black;
-} */

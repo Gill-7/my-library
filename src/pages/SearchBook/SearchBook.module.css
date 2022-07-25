@@ -41,22 +41,39 @@
   background-color: var(--border);
 }
 
-.css-button-sharp--grey {
-  min-width: 130px;
-  height: 40px;
-  color: #fff;
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  border: 2px solid #495057;
-  background: #495057;
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  padding: 1rem 0 1.5rem 0;
 }
-.css-button-sharp--grey:hover {
-  background: #fff;
 
-  color: #495057;
+.page_item {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.page_link {
+  border: none;
+  margin: 0.5rem 0.7rem;
+  font-size: 1.05rem;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style-type: none;
+  cursor: pointer;
+}
+.page_links {
+  margin: 0;
+  padding: 0.5rem 0.8rem;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.page_link:hover {
+  text-decoration: underline;
+}
+
+.active {
+  font-weight: bold;
 }
