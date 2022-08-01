@@ -13,6 +13,9 @@ function SearchBook(props) {
     setTotal,
     currentPage,
     setCurrentPage,
+    addToReadingNow,
+    addToFutureRead,
+    addToPastRead,
   } = props;
 
   const startIdx = 1;
@@ -73,7 +76,14 @@ function SearchBook(props) {
         </button>
       </form>
       {data.length === 0 && <p>Find books </p>}
-      {data.length > 0 && <ShowSearchBooks data={data} />}
+      {data.length > 0 && (
+        <ShowSearchBooks
+          data={data}
+          addToReadingNow={addToReadingNow}
+          addToFutureRead={addToFutureRead}
+          addToPastRead={addToPastRead}
+        />
+      )}
       <ReactPaginate
         breakLabel="..."
         nextLabel="next"
