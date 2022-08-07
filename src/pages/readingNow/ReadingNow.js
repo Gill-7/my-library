@@ -1,9 +1,16 @@
 import React from "react";
+import BookList from "../../components/bookList/BookList";
 
 function ReadingNowPage({ readingNow }) {
-  console.log("From readingnow page");
-  console.log(readingNow);
-  return <div>ReadingNow</div>;
+  return (
+    <div>
+      {readingNow.length < 1 ? (
+        <p>Add books to your reading section</p>
+      ) : (
+        <BookList booksData={readingNow} />
+      )}
+    </div>
+  );
 }
 
 export default ReadingNowPage;

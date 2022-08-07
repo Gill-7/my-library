@@ -1,9 +1,16 @@
 import React from "react";
+import BookList from "../../components/bookList/BookList";
 
 function FutureReadingPage({ futureRead }) {
-  console.log("FROM FUTURE PAGE");
-  console.log(futureRead);
-  return <div>FutureBooks</div>;
+  return (
+    <div>
+      {futureRead.length < 1 ? (
+        <p>You haven't read anything!!!</p>
+      ) : (
+        <BookList booksData={futureRead} />
+      )}
+    </div>
+  );
 }
 
 export default FutureReadingPage;

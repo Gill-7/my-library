@@ -10,33 +10,44 @@ function Sidebar() {
       <div>
         <NavLink
           to="/reading"
-          activeclassname="active"
-          className={classes.link}
+          className={({ isActive }) =>
+            isActive ? `${classes.active} ${classes.link}` : `${classes.link}`
+          }
         >
           Reading Now
         </NavLink>
         <NavLink
           to="/future-reading"
-          activeclassname="active"
-          className={classes.link}
+          className={({ isActive }) =>
+            isActive ? `${classes.active} ${classes.link}` : `${classes.link}`
+          }
         >
           Wants to Read
         </NavLink>
         <NavLink
           to="/past-reading"
-          activeclassname="active"
-          className={classes.link}
+          className={({ isActive }) =>
+            isActive ? `${classes.active} ${classes.link}` : `${classes.link}`
+          }
         >
           Read
         </NavLink>
         <NavLink
           to="/collection"
-          activeclassname="active"
-          className={classes.link}
+          className={({ isActive }) =>
+            isActive ? `${classes.active} ${classes.link}` : `${classes.link}`
+          }
         >
           Collection
         </NavLink>
-        <NavLink to="/search" className={`${classes.link} ${classes.link_btn}`}>
+        <NavLink
+          to="/search"
+          className={({ isActive }) =>
+            isActive
+              ? `${classes.active} ${classes.link} ${classes.link_btn}`
+              : `${classes.link} ${classes.link_btn}`
+          }
+        >
           <div className={classes.link_btn_text}>Search</div>
           <div className={classes.link_btn_icon}>
             <ion-icon name="search-outline"></ion-icon>
