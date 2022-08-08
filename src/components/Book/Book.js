@@ -27,9 +27,10 @@ export default function Book({
           src={
             book.volumeInfo.imageLinks
               ? book.volumeInfo.imageLinks.thumbnail
-              : "No Image Available"
+              : "Image Not Available"
           }
-          alt="Not Available"
+          alt="Img Not Available"
+          className={book.volumeInfo.imageLinks ? "" : classes.notAvailable}
         />
       </div>
       <div className={classes.right}>
