@@ -20,6 +20,23 @@
   cursor: pointer;
 }
 
+.notAvailable {
+  color: var(--light-green);
+  text-align: center;
+}
+.notAvailable::after {
+  content: "No image available";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  padding-top: 55px;
+  width: 115px;
+  height: 110px;
+  left: 0;
+  border: 1px solid rgb(182, 182, 182);
+  background: var(--bg) no-repeat center;
+}
+
 .right {
   text-align: left;
 }
