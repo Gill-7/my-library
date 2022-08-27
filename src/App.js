@@ -7,6 +7,7 @@ import FutureReadingPage from "./pages/futureReading/FutureReading";
 import PastReadingPage from "./pages/pastReading/PastReading";
 import CollectionPage from "./pages/collection/Collection";
 import SearchBook from "./pages/SearchBook/SearchBook";
+import Authentication from "./pages/authentication/Authentication";
 
 function App() {
   const [data, setData] = useState([]);
@@ -95,6 +96,7 @@ function App() {
                 />
               }
             />
+            <Route path="/auth" element={<Authentication />} />
             <Route path="*" element={<Navigate to="/reading" replace />} />
           </Routes>
         </div>

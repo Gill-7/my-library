@@ -1,14 +1,18 @@
 :root {
   --parent-bg: #f1f3f8;
   --color: #1c422b;
-  --light-color: #244f35;
+  --light-color: #2e6645;
   --bg: #f1f3f8;
-  --border: #c8cde5;
+  --border: #bcc3e5;
   --black: #000;
   --light-border: #d4dafa;
   --white: #fff;
   --heading: rgb(58, 58, 58);
-  --text: ;
+  --button-light-orange: #f06e43;
+  --button-dark-orange: #ef5927;
+  --button-light-green: #86d300;
+  --dark-black: #1d1f20;
+  --light-black: #6d6c6c;
 }
 
 body {

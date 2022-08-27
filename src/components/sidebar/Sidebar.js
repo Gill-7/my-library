@@ -53,6 +53,14 @@ function Sidebar() {
             <ion-icon name="search-outline"></ion-icon>
           </div>
         </NavLink>
+        <NavLink
+          to="/auth"
+          className={({ isActive }) =>
+            isActive ? `${classes.active} ${classes.link}` : `${classes.link}`
+          }
+        >
+          Sign in
+        </NavLink>
       </div>
     </nav>
   );
