@@ -3,6 +3,8 @@ import classes from "./SignUpForm.module.css";
 import FormInput from "../formInput/FormInput";
 import Button from "../button/Button";
 
+import { createAuthWithEmailAndPassword } from "../../utils/firebase/Firebase";
+
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -19,10 +21,19 @@ const SignUpForm = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    console.log(formFields);
-    resetFormFields();
+
+    if (password !== confirmPassword) {
+      alert("passwords do not match");
+      return;
+    }
+    try {
+      await createAuthWithEmailAndPassword(email, password);
+      resetFormFields();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const resetFormFields = () => {

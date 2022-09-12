@@ -3,6 +3,8 @@ import classes from "./SignInForm.module.css";
 import Button from "../button/Button";
 import FormInput from "../formInput/FormInput";
 
+import { signinWithEmailAndPassword } from "../../utils/firebase/Firebase";
+
 const defaultFormFields = {
   email: "",
   password: "",
@@ -17,10 +19,15 @@ const SignInForm = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    console.log(formFields);
-    resetFormFields();
+
+    try {
+      const response = await signinWithEmailAndPassword(email, password);
+      resetFormFields();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const resetFormFields = () => {
