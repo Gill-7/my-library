@@ -23,10 +23,19 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const response = await signinWithEmailAndPassword(email, password);
+      const { user } = await signinWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
-      console.log(error);
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert("incorrect password for email");
+          break;
+        case "auth/user-not-found":
+          alert("no user associated with this email");
+          break;
+        default:
+          console.log(error);
+      }
     }
   };
 

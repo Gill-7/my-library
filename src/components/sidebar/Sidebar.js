@@ -1,9 +1,15 @@
-import React from "react";
-import classes from "./Sidebar.module.css";
-import Header from "../header/Header";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
+import Header from "../header/Header";
+import { UserContext } from "../../contexts/user.context";
+import { signOutUser } from "../../utils/firebase/Firebase";
+
+import classes from "./Sidebar.module.css";
+
 function Sidebar() {
+  const { currentUser } = useContext(UserContext);
+
   return (
     <nav>
       <Header />
@@ -59,7 +65,11 @@ function Sidebar() {
             isActive ? `${classes.active} ${classes.link}` : `${classes.link}`
           }
         >
-          Sign in
+          {currentUser ? (
+            <span onClick={signOutUser}>Sign out</span>
+          ) : (
+            "Sign in"
+          )}
         </NavLink>
       </div>
     </nav>
