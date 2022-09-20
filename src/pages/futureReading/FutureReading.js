@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import BookList from "../../components/bookList/BookList";
+import { BooksContext } from "../../contexts/books.context";
 
-function FutureReadingPage({ futureRead }) {
+function FutureReadingPage() {
+  const { futureRead } = useContext(BooksContext);
   return (
     <div>
       {futureRead.length < 1 ? (

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import BookList from "../../components/bookList/BookList";
+import { BooksContext } from "../../contexts/books.context";
 
-function PastReadingPage({ pastReading }) {
+function PastReadingPage() {
+  const { pastReading } = useContext(BooksContext);
   return (
     <div>
       {pastReading.length < 1 ? (

@@ -1,22 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./SearchBook.module.css";
 import ShowSearchBooks from "../../components/showSearchBooks/ShowSearchBooks";
 import ReactPaginate from "react-paginate";
 
-function SearchBook(props) {
-  const {
-    data,
-    handleData,
-    searchTerm,
-    setSearchTerm,
-    total,
-    setTotal,
-    currentPage,
-    setCurrentPage,
-    addToReadingNow,
-    addToFutureRead,
-    addToPastRead,
-  } = props;
+function SearchBook({ data, handleData }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [total, setTotal] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const startIdx = 1;
   let booksPerPage = 10;
@@ -76,14 +66,7 @@ function SearchBook(props) {
         </button>
       </form>
       {data.length === 0 && <p>Find books </p>}
-      {data.length > 0 && (
-        <ShowSearchBooks
-          data={data}
-          addToReadingNow={addToReadingNow}
-          addToFutureRead={addToFutureRead}
-          addToPastRead={addToPastRead}
-        />
-      )}
+      {data.length > 0 && <ShowSearchBooks data={data} />}
       <ReactPaginate
         breakLabel="..."
         nextLabel="next"

@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { BooksContext } from "../../contexts/books.context";
 import classes from "./Book.module.css";
 
-export default function Book({
-  book,
-  id,
-  addToReadingNow,
-  addToFutureRead,
-  addToPastRead,
-}) {
+export default function Book({ book, id }) {
+  const { addToFutureRead, addToReadingNow, addToPastRead } =
+    useContext(BooksContext);
+
   const addToReading = () => {
     addToReadingNow(book);
   };
