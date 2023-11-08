@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import classes from "./App.module.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/sidebar/Sidebar";
 import ReadingNowPage from "./pages/readingNow/ReadingNow";
@@ -16,19 +15,17 @@ function App() {
     setData(arr);
   };
 
-  console.log(data);
-
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [data]);
 
   return (
     <BrowserRouter>
-      <div className={classes.main}>
-        <div className={classes.sidebar}>
+      <div className="w-full mx-auto my-0 grid grid-cols-4 col-start-1 col-end-2 h-screen font-san">
+        <div className="col-start-1 col-end-2 bg-sidebar-bg text-sidebar-link">
           <Sidebar />
         </div>
-        <div className={classes.container}>
+        <div className="col-start-2 col-end-5 bg-background">
           <Routes>
             <Route path="/reading" element={<ReadingNowPage />} />
             <Route path="/future-reading" element={<FutureReadingPage />} />

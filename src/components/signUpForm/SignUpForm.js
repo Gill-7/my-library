@@ -1,13 +1,10 @@
 import { useState } from "react";
-
 import FormInput from "../formInput/FormInput";
 import Button from "../button/Button";
 import {
   createAuthWithEmailAndPassword,
   createUserDocumentWithAuth,
 } from "../../utils/firebase/Firebase";
-
-import classes from "./SignUpForm.module.css";
 
 const defaultFormFields = {
   displayName: "",
@@ -50,8 +47,8 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className={classes["sign-up-container"]}>
-      <h2>Don't have an account?</h2>
+    <div className="flex flex-col w-80">
+      <h2 className="my-2.5 mx-0">Don't have an account?</h2>
       <span>Sign Up with your email and password</span>
       <form onSubmit={submitHandler}>
         <FormInput

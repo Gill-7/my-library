@@ -1,5 +1,4 @@
 import { useState } from "react";
-import classes from "./SignInForm.module.css";
 import Button from "../button/Button";
 import FormInput from "../formInput/FormInput";
 
@@ -44,8 +43,8 @@ const SignInForm = () => {
   };
 
   return (
-    <div className={classes["sign-up-container"]}>
-      <h2>Already have an account?</h2>
+    <div className="flex flex-col w-80">
+      <h2 className="my-2.5 mx-0">Already have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={submitHandler}>
         <FormInput
@@ -64,7 +63,7 @@ const SignInForm = () => {
           value={password}
           onChange={changeHandler}
         />
-        <div className={classes["buttons-container"]}>
+        <div className="flex justify-between">
           <Button>Sign In</Button>
         </div>
       </form>

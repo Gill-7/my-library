@@ -1,8 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
+  /* --background: #000;
+  --sidebar-bg: #09090b;
+  --sidebar-link: #e4e4e7;
+  --sidebar-link-hover: #f4f4f5;
+  --sidebar-link-bg-hover: #27272a; */
+
+  /** BUTTON COLORS **/
+  --button-type1-bg: #fff;
+  --button-type1-text: #fff;
+  --button-type2-bg: #fff;
+  --button-type2-text: #fff;
   --parent-bg: #f1f3f8;
   --color: #1c422b;
-  --light-color: #2e6645;
-  --bg: #f1f3f8;
+  --light-color: #e4e4e4;
   --border: #bcc3e5;
   --black: #000;
   --light-border: #d4dafa;
@@ -18,6 +32,5 @@
 body {
   margin: 0;
   padding: 0;
-  color: var(--color);
   box-sizing: border-box;
 }
