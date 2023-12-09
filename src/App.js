@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Sidebar from "./components/sidebar/Sidebar";
+import Container from "./components/container/Container";
 import ReadingNowPage from "./pages/readingNow/ReadingNow";
 import FutureReadingPage from "./pages/futureReading/FutureReading";
 import PastReadingPage from "./pages/pastReading/PastReading";
 import CollectionPage from "./pages/collection/Collection";
 import SearchBook from "./pages/SearchBook/SearchBook";
-import Authentication from "./pages/authentication/Authentication";
-
+import AuthContainer from "./components/authContainer/AuthContainer";
+import SignInForm from "./pages/signInForm/SignInForm";
+import SignUpForm from "./pages/signUpForm/SignUpForm";
 function App() {
   const [data, setData] = useState([]);
 
@@ -21,25 +22,26 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="w-full mx-auto my-0 grid grid-cols-4 col-start-1 col-end-2 h-screen font-san">
-        <div className="col-start-1 col-end-2 bg-sidebar-bg text-sidebar-link">
-          <Sidebar />
-        </div>
-        <div className="col-start-2 col-end-5 bg-background">
-          <Routes>
-            <Route path="/reading" element={<ReadingNowPage />} />
-            <Route path="/future-reading" element={<FutureReadingPage />} />
-            <Route path="/past-reading" element={<PastReadingPage />} />
-            <Route path="/collection" element={<CollectionPage />} />
+      <Routes>
+        <Route path="/">
+          <Route path="auth" element={<AuthContainer />}>
+            <Route path="sign-in" element={<SignInForm />} />
+            <Route path="sign-up" element={<SignUpForm />} />
+          </Route>
+
+          <Route path="user" element={<Container />}>
+            <Route path="reading" element={<ReadingNowPage />} />
+            <Route path="future-reading" element={<FutureReadingPage />} />
+            <Route path="past-reading" element={<PastReadingPage />} />
+            <Route path="collection" element={<CollectionPage />} />
             <Route
-              path="/search"
+              path="search"
               element={<SearchBook data={data} handleData={handleData} />}
             />
-            <Route path="/auth" element={<Authentication />} />
-            <Route path="*" element={<Navigate to="/reading" replace />} />
-          </Routes>
-        </div>
-      </div>
+          </Route>
+        </Route>
+        <Route path="*" element={<Navigate to="auth/sign-in" replace />} />
+      </Routes>
     </BrowserRouter>
   );
 }

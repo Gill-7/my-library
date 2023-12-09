@@ -1,10 +1,9 @@
 import React from "react";
-import classes from "./ShowSearchBooks.module.css";
 import Book from "../Book/Book";
 
 export default function ShowSearchBooks({ data }) {
   return (
-    <div className={classes.container}>
+    <div className="max-w-2xl w-full mx-auto my-8">
       {data.map((book, id) => (
         <Book book={book} key={id} id={id} />
       ))}

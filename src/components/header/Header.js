@@ -2,17 +2,18 @@ import React from "react";
 
 function Header() {
   const divStyle = {
-    textAlign: "center",
+    textAlign: "left",
     fontFamily: "monospace",
     height: 120,
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "left",
   };
 
   const h1Style = {
-    fontSize: "2.8rem",
+    fontSize: "2.5rem",
     flexWrap: "nowrap",
+    margin: "1.5rem",
   };
 
   return (

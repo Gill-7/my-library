@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Button from "../button/Button";
-import FormInput from "../formInput/FormInput";
-
+import { NavLink } from "react-router-dom";
+import Button from "../../components/button/Button";
+import FormInput from "../../components/formInput/FormInput";
 import { signinWithEmailAndPassword } from "../../utils/firebase/Firebase";
 
 const defaultFormFields = {
@@ -43,9 +43,10 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="flex flex-col w-80">
-      <h2 className="my-2.5 mx-0">Already have an account?</h2>
-      <span>Sign in with your email and password</span>
+    <div className="flex flex-col border border-slate-800 px-8 py-8">
+      <h2 className="text-center text-2xl font-bold tracking-tight mb-2">
+        Sign in to your account
+      </h2>
       <form onSubmit={submitHandler}>
         <FormInput
           label="Email"
@@ -63,8 +64,15 @@ const SignInForm = () => {
           value={password}
           onChange={changeHandler}
         />
-        <div className="flex justify-between">
-          <Button>Sign In</Button>
+        <Button>Sign In</Button>
+        <div className="text-slate-500 text-sm">
+          Not a member?{" "}
+          <NavLink
+            to="/auth/sign-up"
+            className="text-slate-900  font-medium hover:underline"
+          >
+            Sign Up
+          </NavLink>
         </div>
       </form>
     </div>

@@ -14,12 +14,12 @@
   position: relative;
 }
 
-.left img {
+/* .left img {
   width: 115px;
-  height: 165px;
+  height: 125px;
   cursor: pointer;
-}
-
+} */
+/* 
 .notAvailable {
   color: var(--light-green);
   text-align: center;
@@ -35,7 +35,7 @@
   left: 0;
   border: 1px solid rgb(182, 182, 182);
   background: var(--bg) no-repeat center;
-}
+} */
 
 .right {
   text-align: left;
@@ -82,10 +82,10 @@
   letter-spacing: 0.2px;
 }
 
-.right .description {
+/* .right .description {
   margin-bottom: 1rem;
   line-height: 20px;
-}
+} */
 
 .specialBtn,
 .readingBtn1,
