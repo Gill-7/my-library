@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
@@ -7,35 +9,30 @@ module.exports = {
       lg: "976px",
       xl: "1440px",
     },
-    fontFamily: {
-      arial: " Helvetica, sans-serif",
-    },
+
     colors: {
-      background: "#e4e4e7",
-      "sidebar-bg": "#09090b",
-      "sidebar-link": "#a1a1aa",
-      "sidebar-link-hover": "#d4d4d8",
-      "sidebar-link-bg-hover": "#27272a",
-      /** BUTTON COLORS **/
-      "button-type1-bg": "#fff",
-      "button-type1-text": "#fff",
-      "button-type2-bg": "#fff",
-      "button-type2-text": "#fff",
-      "parent-bg": "#f3f4f6",
-      // main: "#1c422b",
-      // sidebar: "#334155",
-      // "sidebar-text": "000",
-      "light-main": "#2e6645",
-      border: "#bcc3e5",
-      black: "#000",
-      "light-border": "#d4dafa",
-      white: "#fff",
-      heading: "rgb(58, 58, 58)",
-      "btn-light-orange": "#f06e43",
-      "btn-dark-orange": "#ef5927",
-      "btn-light-green": "#86d300",
-      "dark-blacke": "#1d1f20",
-      "light-black": "#6d6c6c",
+      // SIDEBAR COLORS
+      "sidebar-bg": "#020617",
+      "sidebar-link": "#cbd5e1",
+      "sidebar-link-hover": "#e2e8f0",
+      "sidebar-link-bg-hover": "#0f172a",
+      // LEFT INPUT SECTION COLORS
+      background: "#fff",
+      "input-main-color": "#94a3b8",
+      "input-text-color": "#475569",
+      "border-bottom": "#cbd5e1",
+      overlay: "#f1f5f9",
+      "overlay-text": "#020617",
+      // FORM INPUTS
+      "input-border": "#94a3b8",
+      "input-border-hover": "#334155",
+      "input-label": "#1e293b",
+      "text-color": "#475569",
+      //FORM BUTTON
+      "button-bg": "#2563eb",
+      "button-text": "#fff",
+      "button-bg-hover": "#1e40af",
+      testing: "#ea580c",
     },
     extend: {
       boxShadow: {

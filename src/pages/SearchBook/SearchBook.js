@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { IoSearchOutline } from "react-icons/io5";
+import { IconContext } from "react-icons";
+
 import classes from "./SearchBook.module.css";
 import ShowSearchBooks from "../../components/showSearchBooks/ShowSearchBooks";
 import ReactPaginate from "react-paginate";
@@ -53,17 +56,31 @@ function SearchBook({ data, handleData }) {
 
   return (
     <div className={classes.search_page}>
-      <form className={classes.search_container} onSubmit={submitHandler}>
+      <form
+        className="h-[60px] sticky bg-background top-0 z-10 flex items-center border-b border-border-bottom shadow pl-8 w-full"
+        onSubmit={submitHandler}
+      >
+        <IconContext.Provider
+          value={{
+            size: "1.2rem",
+            className: "text-input-main-color",
+          }}
+        >
+          <button className="mr-2 pt-[3px]">
+            <IoSearchOutline />
+          </button>
+        </IconContext.Provider>
+
         <input
-          type="text"
-          className={classes.input}
-          placeholder="Search books"
+          type="search"
+          className="border-0 w-full text-base p focus:outline-0 text-input-text-color placeholder-input-main-color"
+          placeholder="Search books..."
           value={searchTerm}
           onChange={changeHandler}
         />
-        <button className={classes.input_btn}>
+        {/* <button className={classes.input_btn}>
           <ion-icon name="search-outline"></ion-icon>
-        </button>
+        </button> */}
       </form>
       {data.length === 0 && <p>Find books </p>}
       {data.length > 0 && <ShowSearchBooks data={data} />}

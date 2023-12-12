@@ -8,7 +8,7 @@ function Link({ title, url, type }) {
   return (
     <div>
       <NavLink
-        to={`/${url}`}
+        to={`${url}`}
         className={({ isActive }) =>
           isActive
             ? `block text-sidebar-link flex-wrap no-underline my-[5px] mx-0 text-base tracking-wider transition-all duration-200ms ease-in-out pr-0 py-2 hover:text-sidebar-link-hover hover:bg-sidebar-link-bg-hover focus:text-sidebar-link-hover focus:bg-sidebar-link-bg-hover sm:pl-4 md:pl-8 lg:pl-12`

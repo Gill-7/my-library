@@ -1,6 +1,7 @@
 import { useState } from "react";
-import FormInput from "../formInput/FormInput";
-import Button from "../button/Button";
+import { NavLink } from "react-router-dom";
+import FormInput from "../../components/formInput/FormInput";
+import Button from "../../components/button/Button";
 import {
   createAuthWithEmailAndPassword,
   createUserDocumentWithAuth,
@@ -47,9 +48,10 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="flex flex-col w-80">
-      <h2 className="my-2.5 mx-0">Don't have an account?</h2>
-      <span>Sign Up with your email and password</span>
+    <div className="flex flex-col border border-form-label px-8 py-8">
+      <h2 className="text-center text-2xl font-bold tracking-tight mb-2">
+        Create an account?
+      </h2>
       <form onSubmit={submitHandler}>
         <FormInput
           label="Display Name"
@@ -84,6 +86,15 @@ const SignUpForm = () => {
           onChange={changeHandler}
         />
         <Button type="submit">Sign Up</Button>
+        <div className="text-slate-500 text-sm">
+          Already a member?{" "}
+          <NavLink
+            to="/auth/sign-in"
+            className="text-slate-900 font-medium hover:underline"
+          >
+            Sign In
+          </NavLink>
+        </div>
       </form>
     </div>
   );

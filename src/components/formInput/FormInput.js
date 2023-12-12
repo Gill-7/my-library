@@ -1,21 +1,12 @@
-import classes from "./FormInput.module.css";
-
 const FormInput = ({ label, ...otherprops }) => {
-  const other = otherprops.value.length;
   return (
-    <div className={classes["group"]}>
-      <input className={classes["form-input"]} {...otherprops} />
-      {label && (
-        <label
-          className={
-            other
-              ? classes["combine-form-input-label-shrink"]
-              : classes["form-input-label"]
-          }
-        >
-          {label}
-        </label>
-      )}
+    <div className="my-4">
+      <label className="text-sm text-input-label">{label}</label>
+      <input
+        className="text-sm px-2 py-2 block w-full rounded-lg my-1 mx-0 border border-input-border hover:border-input-border-hover 
+        "
+        {...otherprops}
+      />
     </div>
   );
 };
