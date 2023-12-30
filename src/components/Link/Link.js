@@ -11,17 +11,17 @@ function Link({ title, url, type }) {
         to={`${url}`}
         className={({ isActive }) =>
           isActive
-            ? `block text-sidebar-link flex-wrap no-underline my-[5px] mx-0 text-base tracking-wider transition-all duration-200ms ease-in-out pr-0 py-2 hover:text-sidebar-link-hover hover:bg-sidebar-link-bg-hover focus:text-sidebar-link-hover focus:bg-sidebar-link-bg-hover sm:pl-4 md:pl-8 lg:pl-12`
-            : "block text-sidebar-link flex-wrap no-underline my-[5px] mx-0 text-base tracking-wider transition-all duration-200ms ease-in-out pr-0 py-2 hover:text-sidebar-link-hover hover:bg-sidebar-link-bg-hover sm:pl-4 md:pl-8 lg:pl-12"
+            ? `font-sans xl:text-md block text-sidebar-link flex-wrap no-underline my-[4px] mx-0 text-base tracking-wider transition-all duration-200ms ease-in-out pr-0 py-2 hover:text-sidebar-link-hover hover:bg-sidebar-link-bg-hover focus:text-sidebar-link-hover focus:bg-sidebar-link-bg-hover pl-10`
+            : "font-sans xl:text-md block text-sidebar-link flex-wrap no-underline my-[4px] mx-0 text-base tracking-wider transition-all duration-200ms ease-in-out pr-0 py-2 hover:text-sidebar-link-hover hover:bg-sidebar-link-bg-hover pl-10 "
         }
       >
         {!type && title}
         {type === "search" && (
           <div className="flex">
-            <div className="mr-1.5 text-base pt-1">
+            <div className="pt-[1px]">{title}</div>
+            <div className="text-lg pt-[2px] absolute left-[104px]">
               <ion-icon name="search-outline"></ion-icon>
             </div>
-            <div>{title}</div>
           </div>
         )}
         {type === "auth" && (

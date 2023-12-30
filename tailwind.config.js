@@ -15,7 +15,7 @@ module.exports = {
       "sidebar-bg": "#020617",
       "sidebar-link": "#cbd5e1",
       "sidebar-link-hover": "#e2e8f0",
-      "sidebar-link-bg-hover": "#0f172a",
+      "sidebar-link-bg-hover": "#0284c7",
       // LEFT INPUT SECTION COLORS
       background: "#fff",
       "input-main-color": "#94a3b8",
@@ -28,6 +28,7 @@ module.exports = {
       "input-border-hover": "#334155",
       "input-label": "#1e293b",
       "text-color": "#475569",
+      "text-white": "fff",
       //FORM BUTTON
       "button-bg": "#2563eb",
       "button-text": "#fff",

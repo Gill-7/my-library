@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
+import { TfiBook } from "react-icons/tfi";
 import { IconContext } from "react-icons";
 
 import classes from "./SearchBook.module.css";
@@ -66,23 +67,34 @@ function SearchBook({ data, handleData }) {
             className: "text-input-main-color",
           }}
         >
-          <button className="mr-2 pt-[3px]">
+          <button className="mr-3 pt-[2px]">
             <IoSearchOutline />
           </button>
         </IconContext.Provider>
 
         <input
           type="search"
-          className="border-0 w-full text-base p focus:outline-0 text-input-text-color placeholder-input-main-color"
+          className="border-0 w-full text-base pr-4 focus:outline-0 text-input-text-color placeholder-input-main-color"
           placeholder="Search books..."
           value={searchTerm}
           onChange={changeHandler}
         />
-        {/* <button className={classes.input_btn}>
-          <ion-icon name="search-outline"></ion-icon>
-        </button> */}
       </form>
-      {data.length === 0 && <p>Find books </p>}
+      {data.length === 0 && (
+        <div className="flex flex-col items-center mt-10">
+          <IconContext.Provider
+            value={{
+              size: "3rem",
+              className: "text-input-text-color",
+            }}
+          >
+            <TfiBook />
+          </IconContext.Provider>
+          <p className="text-base mt-2 ml-3 text-input-text-color">
+            Search Books...
+          </p>
+        </div>
+      )}
       {data.length > 0 && <ShowSearchBooks data={data} />}
       <ReactPaginate
         breakLabel="..."

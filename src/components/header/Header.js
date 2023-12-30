@@ -1,24 +1,11 @@
 import React from "react";
 
-function Header() {
-  const divStyle = {
-    textAlign: "left",
-    fontFamily: "monospace",
-    height: 120,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "left",
-  };
-
-  const h1Style = {
-    fontSize: "2.5rem",
-    flexWrap: "nowrap",
-    margin: "1.5rem",
-  };
-
+function Header({ align }) {
   return (
-    <div style={divStyle}>
-      <h6 style={h1Style}>Readers</h6>
+    <div
+      className={`flex items-center justify-${align} pl-10 font-mono text-left`}
+    >
+      <h6 className="text-5xl my-8 mt-12">Readers</h6>
     </div>
   );
 }
